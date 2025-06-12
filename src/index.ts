@@ -50,7 +50,7 @@ function validateCreateAgent(
   if (
     typeof firstName !== "string" ||
     typeof lastName !== "string" ||
-    (email !== null && typeof email !== "string")
+    (email !== undefined && email !== null && typeof email !== "string")
   ) {
     console.error("Invalid request body:", req.body);
     res.status(400).json({ error: "Invalid request body" });
@@ -92,7 +92,7 @@ app.post("/agents", authenticateToken, validateCreateAgent, (req, res) => {
     id: randomUUID(),
     firstName,
     lastName,
-    email,
+    email: email || null,
     avatarUrl: faker.image.avatar(),
     createdAt: now,
     updatedAt: now,
