@@ -1,11 +1,12 @@
-# Agent API
+# Agents API
 
-A simple Express-based API for managing agents. All endpoints require an API token in the `x-api-token` header.
+A simple Express-based API for managing real estate agents Directory. All endpoints require an API token in the `x-api-token` header.
 
 ## Base URL
 
 ```
-http://localhost:3040
+dev : http://localhost:3040
+prod : https://technical-test-agents-backend-abd29df539ea.herokuapp.com
 ```
 
 ## Authentication
@@ -121,18 +122,19 @@ x-api-token: your-secret-api-token
 
 ## Agent Object
 
-| Field      | Type           | Description           |
-|------------|----------------|----------------------|
-| id         | string         | Unique agent ID      |
-| firstName  | string         | Agent's first name   |
-| lastName   | string         | Agent's last name    |
-| email      | string \| null | Agent's email        |
-| createdAt  | string         | ISO date created     |
-| updatedAt  | string         | ISO date updated     |
+| Field     | Type           | Description        |
+| --------- | -------------- | ------------------ |
+| id        | string         | Unique agent ID    |
+| firstName | string         | Agent's first name |
+| lastName  | string         | Agent's last name  |
+| email     | string \| null | Agent's email      |
+| createdAt | string         | ISO date created   |
+| updatedAt | string         | ISO date updated   |
 
 ---
 
 ## Notes
+
 - All dates are in ISO 8601 format.
 - Pagination returns 10 agents per page.
 - All endpoints require authentication.

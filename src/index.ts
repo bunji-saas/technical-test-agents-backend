@@ -3,7 +3,7 @@ import { Agent } from "./types/agent";
 import { randomUUID } from "crypto";
 
 const app = express();
-const PORT = 3040;
+const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3040;
 
 app.use(express.json());
 
