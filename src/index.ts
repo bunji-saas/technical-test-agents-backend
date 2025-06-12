@@ -135,7 +135,7 @@ app.delete("/agents/:id", authenticateToken, (req, res) => {
 // List agents with pagination
 app.get("/agents", authenticateToken, (req, res) => {
   const page = parseInt(req.query.page as string) || 1;
-  const limit = 10;
+  const limit = 12;
   const start = (page - 1) * limit;
   const end = start + limit;
 
