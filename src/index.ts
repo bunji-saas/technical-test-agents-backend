@@ -139,7 +139,14 @@ app.get("/agents", authenticateToken, (req, res) => {
   const start = (page - 1) * limit;
   const end = start + limit;
 
-  const paginatedAgents = agents.slice(start, end);
+  // Sort agents by updatedAt descending
+  const sortedAgents = agents
+    .slice()
+    .sort(
+      (a, b) =>
+        new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime(),
+    );
+  const paginatedAgents = sortedAgents.slice(start, end);
 
   res.json({
     data: paginatedAgents,

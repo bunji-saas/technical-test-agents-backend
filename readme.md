@@ -1,6 +1,34 @@
 # Agents API
 
-A simple Express-based API for managing real estate agents Directory. All endpoints require an API token in the `x-api-token` header.
+A simple Express-based API for managing a real estate agents directory. All endpoints require an API token in the `x-api-token` header.
+
+---
+
+## Technologies Used
+
+- Node.js
+- Express.js
+- TypeScript
+
+---
+
+## Getting Started
+
+### Installation
+
+```bash
+npm install
+```
+
+### Running the Server (Development)
+
+```bash
+npm run dev
+```
+
+The server will start at `http://localhost:3040` by default.
+
+---
 
 ## Base URL
 
@@ -9,6 +37,8 @@ dev : http://localhost:3040
 prod : https://technical-test-agents-backend-abd29df539ea.herokuapp.com
 ```
 
+---
+
 ## Authentication
 
 All requests must include the following header:
@@ -16,6 +46,8 @@ All requests must include the following header:
 ```
 x-api-token: your-secret-api-token
 ```
+
+Replace `your-secret-api-token` with your actual API token.
 
 ---
 
@@ -138,3 +170,9 @@ x-api-token: your-secret-api-token
 - All dates are in ISO 8601 format.
 - Pagination returns 10 agents per page.
 - All endpoints require authentication.
+
+---
+
+## License
+
+MIT
