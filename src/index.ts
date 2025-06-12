@@ -1,10 +1,20 @@
 import express, { Request, Response, NextFunction } from "express";
 import { Agent } from "./types/agent";
 import { randomUUID } from "crypto";
+import { faker } from "@faker-js/faker";
+import cors from "cors";
 
 const app = express();
-const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3040;
+const PORT = 3040;
 
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+    methods: ["GET", "POST", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "x-api-token"],
+    optionsSuccessStatus: 200,
+  }),
+);
 app.use(express.json());
 
 let agents: Agent[] = [];
@@ -83,6 +93,7 @@ app.post("/agents", authenticateToken, validateCreateAgent, (req, res) => {
     firstName,
     lastName,
     email,
+    avatarUrl: faker.image.avatar(),
     createdAt: now,
     updatedAt: now,
   };
