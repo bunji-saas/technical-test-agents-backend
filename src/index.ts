@@ -19,6 +19,20 @@ app.use(express.json());
 
 let agents: Agent[] = [];
 
+// Add 12 default agents at startup
+for (let i = 0; i < 12; i++) {
+  const now = new Date().toISOString();
+  agents.push({
+    id: randomUUID(),
+    firstName: faker.person.firstName(),
+    lastName: faker.person.lastName(),
+    email: faker.internet.email(),
+    avatarUrl: faker.image.avatar(),
+    createdAt: now,
+    updatedAt: now,
+  });
+}
+
 // API token authentication middleware
 const API_TOKEN = "your-secret-api-token";
 

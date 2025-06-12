@@ -17,13 +17,13 @@ A simple Express-based API for managing a real estate agents directory. All endp
 ### Installation
 
 ```bash
-npm install
+yarn install
 ```
 
 ### Running the Server (Development)
 
 ```bash
-npm run dev
+yarn run dev
 ```
 
 The server will start at `http://localhost:3040` by default.
@@ -144,7 +144,7 @@ Replace `your-secret-api-token` with your actual API token.
     ],
     "total": 1,
     "page": 1,
-    "pageSize": 10
+    "pageSize": 12
   }
   ```
 - **Errors:**
@@ -168,7 +168,7 @@ Replace `your-secret-api-token` with your actual API token.
 ## Notes
 
 - All dates are in ISO 8601 format.
-- Pagination returns 10 agents per page.
+- Pagination returns 12 agents per page.
 - All endpoints require authentication.
 
 ---
