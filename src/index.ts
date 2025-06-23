@@ -9,7 +9,7 @@ const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3040;
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "http://localhost:5174/",
     methods: ["GET", "POST", "PATCH", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "x-api-token"],
     optionsSuccessStatus: 200,
